@@ -1,0 +1,28 @@
+# Surya Ardhian Mokodongan
+# 2409076011
+# KELAYAKAN PENGAJUAN KREDIT PADA BANK
+
+# Input usia, pendapatan, dan status pekerjaan
+usia = int(input("Masukkan usia Anda: "))
+pendapatan = float(input("Masukkan pendapatan tahunan Anda: "))
+status_pekerjaan = input("Apakah status pekerjaan Anda tetap atau kontrak? ")
+
+# Penentuan kelayakan kredit berdasarkan kondisi
+if 21 < usia < 60:
+    if pendapatan > 50000000: #pendapat tahunan
+        if status_pekerjaan == "tetap" or status_pekerjaan == "Tetap":
+            keputusan = "Kredit disetujui"
+        elif status_pekerjaan == "kontrak" or status_pekerjaan == "Kontrak":
+            if pendapatan > 80000000:  # Pendapatan lebih besar diperlukan untuk kontrak
+                keputusan = "Kredit disetujui"
+            else:
+                keputusan = "Kredit ditolak - Pendapatan kontrak tidak mencukupi"
+        else:
+            keputusan = "Status pekerjaan tidak valid"
+    else:
+        keputusan = "Kredit ditolak - Pendapatan tidak mencukupi"
+else:
+    keputusan = "Kredit ditolak - Usia tidak memenuhi syarat"
+
+# Output hasil
+print(keputusan)
